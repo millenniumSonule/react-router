@@ -1,0 +1,83 @@
+.footer-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8 !important;
+    padding: 10px 0;
+    display: flex;
+    justify-content:space-around;
+}
+
+.disc-footer {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    color: black;
+}
+
+.logo > img {
+    height: 45px;
+    width: 175px;
+    position: relative;
+    right: 2px;
+}
+
+.disc-footer {
+    max-width: 400px;
+    font-size: 16px; /* Default font size */
+    line-height: 1.6; /* Default line height */
+}
+
+@media (max-width: 768px) {
+    .disc-footer {
+        font-size: 14px; /* Decrease font size on smaller screens */
+        margin-bottom: 10px;
+
+    }
+    .footer-container {
+        display: block;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .disc-footer {
+        font-size: 12px; /* Further decrease font size on even smaller screens */
+        line-height: 1.4; /* Adjust line height for better readability */
+    }
+    .footer-container {
+        display: block;
+    }
+}
+
+.links-colms {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+ul {
+    list-style: none; /* Remove default bullet point */
+    padding: 0;
+    margin: 0;
+}
+
+.tastebite-col {
+    display: flex;
+    align-items: center;
+    gap:35px;
+}
+
+@media (max-width: 768px) {
+    .tastebite-col {
+        flex-direction: column;
+    }
+    .logo-discription {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
