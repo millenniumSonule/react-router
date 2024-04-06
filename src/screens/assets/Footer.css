@@ -37,6 +37,14 @@ li:hover {
     right: 2px;
 }
 
+@media (max-width:768px) {
+    .logo img {
+        width: 100%;
+
+    }
+
+}
+
 .disc-footer {
     max-width: 400px;
     font-size: 16px;
@@ -91,7 +99,6 @@ ul {
 
 .tastebite-col {
     display: flex;
-    align-items: center;
     gap: 35px;
     width: 30%; /* Adjust width as needed */
 }

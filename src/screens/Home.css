@@ -1,5 +1,8 @@
 .container-homepage {
-    min-height: calc(100vh -800px); /* Adjust the value based on your footer height */
-    overflow-y: auto; /* Enable vertical scrolling when content exceeds the container height */
+    /* min-height: calc(100vh -800px); Adjust the value based on your footer height */
+    /* overflow-y: auto; Enable vertical scrolling when content exceeds the container height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  
+    

@@ -21,22 +21,26 @@ const Footer = () => {
       <div className="links-colms">
         <div className="tastebite-col">
             <ul>
-              <li>Tastebite</li>
+              <li style={{fontWeight:900}}>Tastebite</li>
               <li>About us </li>
               <li>Careers</li>
               <li>Feedback</li>
+
             </ul>
             <ul>
-              <li>Tastebite</li>
-              <li>About us </li>
-              <li>Careers</li>
-              <li>Feedback</li>
+              <li style={{fontWeight:900}}>Legal</li>
+              <li>Terms</li>
+              <li>Conditions</li>
+              <li>Cookies</li>
+              <li>Copyright</li>
+
             </ul>
             <ul>
-              <li>Tastebite</li>
-              <li>About us </li>
-              <li>Careers</li>
-              <li>Feedback</li>
+              <li style={{fontWeight:900}}>Follow</li>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
             </ul>
         </div>
 

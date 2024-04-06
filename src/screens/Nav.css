@@ -33,6 +33,9 @@
 }
 
 @media (max-width: 768px) {
+    .logo img {
+        width: 100%;
+    }
     .nav-search button {
         margin: 7px;
     }
@@ -43,8 +46,8 @@
 }
 
 @media (max-width: 420px) {
-    .logo {
-        display: none;
+    .logo img{
+        width: 100%;
     }
 }
 
@@ -62,14 +65,15 @@
 
 .nav-search input[type="text"] {
     padding: 8px;
+    width: 90%;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     font-size: 16px;
     outline: none;
 }
 
 .nav-search button {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     padding: 8px 12px;
     border: none;
