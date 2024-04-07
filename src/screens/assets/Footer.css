@@ -1,15 +1,15 @@
 .footer-container {
-
     width: 100%;
     background-color: #f8f8f8 !important;
     padding: 70px;
     display: flex;
     justify-content: space-around;
+    padding-right: 150px;
 }
 
 @media (min-width : 768px) {
     .footer-container {
-        position: absolute;
+        position: relative;
         bottom: 0;
     }
 }
@@ -20,17 +20,22 @@
 }
 
 li {
-    margin-bottom: 10px; /* Increase space between list items */
-    font-size: 16px; /* Adjust font size as needed */
-    color: #333; /* Text color */
+    margin-bottom: 10px;
+    /* Increase space between list items */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    color: #333;
+    /* Text color */
 }
 
 li:hover {
-    color: #007bff; /* Change color on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #007bff;
+    /* Change color on hover */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
 }
 
-.logo img {
+.f-logo img {
     height: 45px;
     width: 175px;
     position: relative;
@@ -38,9 +43,9 @@ li:hover {
 }
 
 @media (max-width:768px) {
-    .logo img {
+    .f-logo img {
         width: 100%;
-
+        left: 20px;
     }
 
 }
@@ -59,6 +64,7 @@ li:hover {
         font-size: 14px;
         margin-bottom: 10px;
         text-align: center;
+        margin-left: 36px;
 
     }
 
@@ -100,12 +106,14 @@ ul {
 .tastebite-col {
     display: flex;
     gap: 35px;
-    width: 30%; /* Adjust width as needed */
+    width: 30%;
+    /* Adjust width as needed */
 }
 
 @media (max-width: 768px) {
     .tastebite-col {
         flex-direction: column;
+        align-items: center;
     }
 
     .logo-discription {

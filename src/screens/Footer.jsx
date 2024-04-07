@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer-container">
 
       <div className="logo-discription">
-        <div className="logo">
+        <div className="f-logo">
 
           <img src={logo} alt="Tastebite Logo" />
         

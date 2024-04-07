@@ -7,6 +7,10 @@ const Categories = () => {
     <div className="container-homepage">
       <NavBar />
       <h1>categories</h1>
+      <h1>categories</h1>
+      <h1>categories</h1>
+      <h1>categories</h1>
+      <h1 >categories</h1>
 
       <Footer/>
     </div>
