@@ -13,3 +13,62 @@
   height: 100%;
   object-fit: cover;
 }
+
+.popular-category {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 2vh;
+}
+
+.popular-category-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Adjust the gap between items */
+  padding: 18px;
+}
+
+.first-category {
+  width: 120px; /* Adjust the width of each category */
+  text-align: center; /* Center text */
+}
+
+.round-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%; /* Set border radius to 50% for perfect circles */
+}
+
+@media (max-width: 768px) {
+  .first-category {
+    width: 30%; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .first-category {
+    width: 45%; /* Further adjust width for even smaller screens */
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Add background color with transparency */
+  color: white; /* Set text color */
+  padding: 10px; /* Add padding to the text */
+}
+
+
+
