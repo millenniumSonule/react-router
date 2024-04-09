@@ -1,9 +1,9 @@
 .container-homepage {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .a-image {
   height: 480px;
 }
@@ -18,36 +18,54 @@
   margin-left: 10vw;
   margin-right: 10vw;
   margin-top: 2vh;
+
 }
 
 .popular-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Adjust the gap between items */
-  padding: 18px;
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next line */
+  justify-content: center;
+  /* Center items horizontally */
 }
 
 .first-category {
-  width: 120px; /* Adjust the width of each category */
-  text-align: center; /* Center text */
+  margin: 10px;
+  /* Adjust spacing between items */
+
 }
 
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Align items horizontally */
+  text-align: center;
+  /* Align text center */
+}
+
+
 .round-image {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%; /* Set border radius to 50% for perfect circles */
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  /* Set border radius to 50% for perfect circles */
 }
 
 @media (max-width: 768px) {
   .first-category {
-    width: 30%; /* Adjust width for smaller screens */
+    width: 30%;
+    /* Adjust width for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .first-category {
-    width: 45%; /* Further adjust width for even smaller screens */
+    width: 45%;
+    /* Further adjust width for even smaller screens */
   }
 }
 
@@ -57,7 +75,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
 }
 
 .carousel-caption {
@@ -65,10 +84,66 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Add background color with transparency */
-  color: white; /* Set text color */
-  padding: 10px; /* Add padding to the text */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Add background color with transparency */
+  color: white;
+  /* Set text color */
+  padding: 10px;
+  /* Add padding to the text */
 }
 
 
 
+.category-image {
+  width: 100px;
+  /* Adjust the width of the image */
+  height: 100px;
+  /* Adjust the height of the image */
+  border-radius: 50%;
+  /* Make the image round */
+}
+
+.category-name {
+  margin-top: 5px;
+  /* Adjust spacing between image and text */
+  font-size: 14px;
+  /* Adjust font size */
+}
+
+.supar-delicious {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 2vh;
+  margin-bottom: 20px;
+
+}
+
+.random-meals {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.random-meal-card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+
+}
+
+.random-meal-card {
+  display: flex;
+  background: rgba(0, 0, 0, 0.125);
+  max-width: 25%;
+  max-height: 25%;
+  margin: 0 10px 10px 0px;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .supar-delicious h2 {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+}
