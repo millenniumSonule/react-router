@@ -217,3 +217,15 @@
 .email-input-box button:hover {
   background-color: black;
 }
+
+.col-md-6 {
+    flex-shrink: 0;
+    width: 100% !important;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+
+

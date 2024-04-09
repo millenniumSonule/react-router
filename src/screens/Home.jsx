@@ -10,11 +10,21 @@ import cImage from './assets/corosalmages/c.jpg';
 import dImage from './assets/corosalmages/d.jpg';
 import eImage from './assets/corosalmages/e.jpg';
 import axios from 'axios';
+import YouTube from 'react-youtube';
+
 const Home = () => {
 
   const [popularCategory, setPopularCategory] = useState([]);
 
   const [randomMeals, setRandomMeals] = useState([]);
+  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const getVideoId = (youtubeLink) => {
+    const videoIdMatch = youtubeLink.match(/(?:youtu\.be\/|youtube\.com\/(?:.*(?:v=|\/v\/)|(?:watch\/|embed\/|v\/))|youtu\.be\/)([^#\&\?]*).*/);
+    return videoIdMatch ? videoIdMatch[1] : '';
+  };
+  
 
   const fetchRandomMeals = async () => {
     try {
@@ -41,6 +51,16 @@ const Home = () => {
       console.error('Error fetching data:', error);
     }
   }
+
+  const fetchMealDetails = async (mealId) => {
+    try {
+      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+      setSelectedMeal(response.data.meals[0]);
+      setShowModal(true);
+    } catch (error) {
+      console.error('Error fetching meal details:', error);
+    }
+  };
 
   useEffect(() => {
     fetchPopularCategory();
@@ -105,27 +125,92 @@ const Home = () => {
 
 
       <div class="supar-delicious">
-  <h2>Trending Now</h2>
-  <div class="random-meals d-flex">
-    {randomMeals.map((meal, index) => (
-      <div class="random-meal-card" key={index}>
-        <img src={meal.strMealThumb} class="random-meal-card-image" alt={meal.strMeal} />
-        <h3>{meal.strMeal}</h3>
+        <h2>Trending Now</h2>
+        <div class="random-meals d-flex">
+          {randomMeals.map((meal, index) => (
+            <div className="random-meal-card" key={index} onClick={() => fetchMealDetails(meal.idMeal)}>
+              <img src={meal.strMealThumb} class="random-meal-card-image" alt={meal.strMeal} />
+              <h3>{meal.strMeal}</h3>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-      <div className="join-email-form">
-          <h1>Deliciousness <br/>to your inbox </h1>
-          <h4>Enjoy Weekly Handpick Recipes and</h4>
-          <h4>recommendations</h4>
-          <div className="email-box">
-          <div className="email-input-box">
-                <input type="text" placeholder="Email address" />
-                <button>Join</button>
+      {/* Modal */}
+
+           {showModal && selectedMeal && (
+        <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{selectedMeal.strMeal}</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="row">
+                  <div className="col-md-6">
+                    <img src={selectedMeal.strMealThumb} className="img-fluid meal-image" alt={selectedMeal.strMeal} />
+                  </div>
+                  <div className="col-md-6">
+                    <div className="details">
+                      <h6>Instructions:</h6>
+                      <p>{selectedMeal.strInstructions}</p>
+                      <h6>Ingredients:</h6>
+                      <ul>
+                        {Object.keys(selectedMeal).map((key, index) => {
+                          if (key.startsWith("strIngredient") && selectedMeal[key]) {
+                            return <li key={index}>{selectedMeal[key]} - {selectedMeal[`strMeasure${index + 1}`]}</li>;
+                          }
+                          return null;
+                        })}
+                      </ul>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <h6>Category:</h6>
+                        <p>{selectedMeal.strCategory}</p>
+                      </div>
+                      <div className="col">
+                        <h6>Area:</h6>
+                        <p>{selectedMeal.strArea}</p>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <h6>Tags:</h6>
+                        <p>{selectedMeal.strTags}</p>
+                      </div>
+                      <div className="col">
+                        <h6>YouTube Video:</h6>
+                        <div className="embed-responsive embed-responsive-16by9">
+                          <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${getVideoId(selectedMeal.strYoutube)}`} allowFullScreen title="YouTube video player"></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => setShowModal(false)}>Close</button>
+              </div>
             </div>
           </div>
+        </div>
+      )}
+      {/* Email form */}
+
+      <div className="join-email-form">
+        <h1>Deliciousness <br />to your inbox </h1>
+        <h4>Enjoy Weekly Handpick Recipes and</h4>
+        <h4>recommendations</h4>
+        <div className="email-box">
+          <div className="email-input-box">
+            <input type="text" placeholder="Email address" />
+            <button>Join</button>
+          </div>
+        </div>
       </div>
 
       <Footer />
