@@ -20,7 +20,7 @@ const Home = () => {
   const fetchRandomMeals = async () => {
     try {
       const uniqueMeals = [];
-      while (uniqueMeals.length < 6) {
+      while (uniqueMeals.length < 8) {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
         const meal = response.data.meals[0];
         const isDuplicate = uniqueMeals.some((m) => m.idMeal === meal.idMeal);
@@ -48,7 +48,7 @@ const Home = () => {
     fetchPopularCategory();
     fetchRandomMeals();
   }, []);
-  
+
   return (
     <div className="container-homepage">
       <NavBar />
@@ -106,18 +106,18 @@ const Home = () => {
       </div>
 
 
-      <div className="supar-delicious">
-        <h2>Supar Delicious</h2>
-        <div className="random-meals d-flex">
-          {/* Random meal cards */}
-          {randomMeals.map((meal, index) => (
-            <div className="random-meal-card" key={index}>
-              <img src={meal.strMealThumb} className="random-meal-card-image" alt={meal.strMeal} />
-              <h3>{meal.strMeal}</h3>
-            </div>
-          ))}
-        </div>
+      <div class="supar-delicious">
+  <h2>Supar Delicious</h2>
+  <div class="random-meals d-flex">
+    {randomMeals.map((meal, index) => (
+      <div class="random-meal-card" key={index}>
+        <img src={meal.strMealThumb} class="random-meal-card-image" alt={meal.strMeal} />
+        <h3>{meal.strMeal}</h3>
       </div>
+    ))}
+  </div>
+</div>
+
       <Footer />
     </div>
   );

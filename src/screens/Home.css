@@ -38,6 +38,10 @@
 
 }
 
+.first-category :hover {
+  transform: translateY(-10px);
+}
+
 .center-content {
   display: flex;
   flex-direction: column;
@@ -110,40 +114,49 @@
   /* Adjust font size */
 }
 
-.supar-delicious {
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-top: 2vh;
-  margin-bottom: 20px;
 
+/* styles.css */
+
+.supar-delicious {
+  margin: 2vh 10vw 20px;
 }
 
 .random-meals {
-  display: flex !important;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-}
-.random-meal-card img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-
 }
 
 .random-meal-card {
-  display: flex;
-  background: rgba(0, 0, 0, 0.125);
-  max-width: 25%;
-  max-height: 25%;
-  margin: 0 10px 10px 0px;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  flex: 0 0 calc(25% - 20px);
+  margin: 0 0 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.random-meal-card:hover {
+  transform: translateY(-10px);
+}
+
+.random-meal-card img {
+  width: 100%;
+  height: auto;
+}
+
+.random-meal-card h3 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1rem; /* Adjust font size as needed */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
 }
 
 @media (max-width: 768px) {
-  .supar-delicious h2 {
-    display: flex;
-    justify-content: space-around;
+  .random-meal-card {
+    flex-basis: calc(50% - 20px);
   }
-  
 }
