@@ -10,7 +10,6 @@ import cImage from './assets/corosalmages/c.jpg';
 import dImage from './assets/corosalmages/d.jpg';
 import eImage from './assets/corosalmages/e.jpg';
 import axios from 'axios';
-import YouTube from 'react-youtube';
 
 const Home = () => {
 
@@ -138,7 +137,7 @@ const Home = () => {
 
       {/* Modal */}
 
-      {showModal && selectedMeal && (
+{showModal && selectedMeal && (
   <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
     <div className="modal-dialog" role="document">
       <div className="modal-content">
