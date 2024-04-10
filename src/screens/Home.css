@@ -174,6 +174,10 @@
   transition: transform 0.3s ease;
 }
 
+.join-email-form h4 {
+  text-align:center;
+}
+
 .join-email-form:hover {
   transform: translateY(-5px);
 }
