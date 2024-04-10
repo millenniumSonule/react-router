@@ -24,7 +24,7 @@ const Categories = () => {
       const [ingredientResponse, areaResponse, categoryResponse] = await Promise.all([
         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${a}`),
         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${a}`),
-        axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${a}`)
+        axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${a}`),
       ]);
   
       // Extract the meals array from each response
