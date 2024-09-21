@@ -13,6 +13,7 @@ const NavBar = () => {
 
             </div>
 
+
             <div className="nav-list">
                 <ul className="nav-items">
                     <li><NavLink exact to="/" activeClassName="active">Homepage</NavLink></li>
